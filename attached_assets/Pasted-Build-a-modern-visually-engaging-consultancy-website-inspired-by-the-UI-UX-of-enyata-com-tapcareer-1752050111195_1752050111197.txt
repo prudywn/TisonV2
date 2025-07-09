@@ -1,0 +1,86 @@
+Build a modern, visually engaging consultancy website inspired by the UI/UX of enyata.com, tapcareers.io, and awesomity.rw. Use Next.js as the framework. Structure the site so that each major section is on a separate page for clarity and scalability. The design should be clean, professional, and conversion-focused, with a consistent color palette, bold typography, and ample white space. Prioritize mobile responsiveness and accessibility.
+
+Site Structure and Pages
+Create the following main pages, each as a separate route in Next.js:
+
+Home (Landing Page)
+
+Hero section with a catchy headline, subheadline, and a prominent call-to-action (e.g., “Book a Consultation”)
+
+Brief overview of consultancy value proposition
+
+About Us
+
+Company story, mission, and values
+
+Team highlights (photos and bios)
+
+Services
+
+Visual cards or sections for each consultancy service
+
+Short description, relevant icon/image, and “Learn More” links for each service
+
+Case Studies / Projects
+
+Showcase 3–5 client projects or success stories
+
+Images, brief descriptions, and measurable outcomes
+
+Testimonials
+
+Client quotes or endorsements, with names and photos/logos
+
+How It Works
+
+Step-by-step process or timeline for engaging with the consultancy
+
+Pricing (if applicable)
+
+Transparent, easy-to-understand pricing options or packages
+
+Thought Leadership
+
+Blog posts, podcasts, or insights to demonstrate expertise
+
+Contact
+
+Simple contact form and/or scheduling tool
+
+Social media links
+
+Footer (global component)
+
+Company info, quick links, privacy policy, and contact details
+
+Design & Functionality Guidelines
+Use clear, direct language and bullet points for readability
+
+Incorporate visuals: icons, project images, team photos
+
+Ensure fast loading and smooth navigation
+
+Add subtle animations or hover effects for interactivity
+
+Make CTAs prominent and repeat them throughout the site
+
+Feature client logos, awards, and recognitions for credibility
+
+Integrate an appointment scheduling system and inquiry forms
+
+Optimize for SEO with relevant keywords and meta descriptions
+
+Ensure accessibility and mobile responsiveness
+
+Integrate with CRM and analytics tools as needed
+
+Technical Instructions
+Use Next.js for all routing and page management
+
+Each major section should be a separate page (e.g., /about, /services, /projects, /testimonials, /how-it-works, /pricing, /blog, /contact)
+
+Use modular, reusable components for sections like testimonials, service cards, and CTAs
+
+Implement a global footer and navigation bar
+
+Ensure all forms are functional and styled consistently
