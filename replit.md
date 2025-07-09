@@ -21,8 +21,8 @@ Preferred communication style: Simple, everyday language.
 
 ### Backend Architecture
 - **Framework**: Express.js with TypeScript
-- **Database**: PostgreSQL with Drizzle ORM
-- **Database Provider**: Neon Database (serverless PostgreSQL)
+- **Content Management**: Sanity CMS integration with fallback to in-memory storage
+- **Database**: PostgreSQL with Drizzle ORM (optional for contact submissions)
 - **API Design**: RESTful API endpoints
 - **Middleware**: Built-in logging and error handling
 
@@ -47,10 +47,11 @@ Preferred communication style: Simple, everyday language.
 - **Blog**: Thought leadership and industry insights
 - **Contact**: Contact form and business information
 
-#### Storage Layer
+#### Content Management System
+- **Primary**: Sanity CMS integration for production content management
+- **Fallback**: MemStorage with seed data for development
 - **Interface**: IStorage abstraction for data operations
-- **Implementation**: MemStorage for development with seed data
-- **Database Integration**: Ready for PostgreSQL with Drizzle ORM
+- **Auto-detection**: Automatically switches between Sanity and memory storage based on configuration
 
 ## Data Flow
 
@@ -93,7 +94,10 @@ Preferred communication style: Simple, everyday language.
 
 ### Environment Configuration
 - **NODE_ENV**: Controls development vs production behavior
-- **DATABASE_URL**: PostgreSQL connection string
+- **SANITY_PROJECT_ID**: Sanity CMS project identifier
+- **SANITY_DATASET**: Sanity dataset name (default: production)
+- **SANITY_TOKEN**: Sanity API token for write operations
+- **DATABASE_URL**: PostgreSQL connection string (optional)
 - **REPL_ID**: Replit-specific development features
 
 ### Key Architectural Decisions

@@ -277,8 +277,11 @@ export class MemStorage implements IStorage {
   async createContactSubmission(submission: InsertContactSubmission): Promise<ContactSubmission> {
     const id = this.currentId++;
     const contactSubmission: ContactSubmission = {
-      ...submission,
       id,
+      name: submission.name,
+      email: submission.email,
+      company: submission.company || null,
+      message: submission.message,
       submittedAt: new Date()
     };
     this.contactSubmissions.set(id, contactSubmission);
@@ -286,4 +289,10 @@ export class MemStorage implements IStorage {
   }
 }
 
-export const storage = new MemStorage();
+// Export storage instance based on configuration
+import { SanityStorage } from './sanityStorage';
+
+// Use Sanity if project ID is configured, otherwise fallback to memory storage
+export const storage = process.env.SANITY_PROJECT_ID && process.env.SANITY_PROJECT_ID !== 'your-project-id' 
+  ? new SanityStorage() 
+  : new MemStorage();
