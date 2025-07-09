@@ -1,6 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import { Card, CardContent } from "@/components/ui/card";
 import TeamMemberCard from "@/components/TeamMember";
+import AnimatedHero from "@/components/AnimatedHero";
+import AnimatedSection from "@/components/AnimatedSection";
+import AnimatedCounter from "@/components/AnimatedCounter";
 import { Target, Heart, Award, Users } from "lucide-react";
 import type { TeamMember } from "@shared/schema";
 
@@ -14,7 +17,7 @@ export default function About() {
       {/* Hero Section */}
       <section className="py-20 bg-consultancy-light-gray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <AnimatedHero className="text-center mb-16">
             <h1 className="text-4xl lg:text-6xl font-bold text-consultancy-secondary mb-6">
               About ConsultancyPro
             </h1>
@@ -23,7 +26,7 @@ export default function About() {
               we combine deep industry expertise with innovative methodologies to deliver 
               sustainable growth and operational excellence.
             </p>
-          </div>
+          </AnimatedHero>
         </div>
       </section>
 

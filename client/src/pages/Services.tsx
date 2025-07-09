@@ -3,6 +3,8 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import ServiceCard from "@/components/ServiceCard";
+import AnimatedHero from "@/components/AnimatedHero";
+import AnimatedSection from "@/components/AnimatedSection";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import type { Service } from "@shared/schema";
 
@@ -16,7 +18,7 @@ export default function Services() {
       {/* Hero Section */}
       <section className="py-20 bg-consultancy-light-gray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <AnimatedHero className="text-center mb-16">
             <h1 className="text-4xl lg:text-6xl font-bold text-consultancy-secondary mb-6">
               Our Services
             </h1>
@@ -24,7 +26,7 @@ export default function Services() {
               Comprehensive consulting solutions designed to address your most critical business 
               challenges and unlock sustainable growth opportunities across all areas of your organization.
             </p>
-          </div>
+          </AnimatedHero>
         </div>
       </section>
 

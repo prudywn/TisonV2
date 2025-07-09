@@ -5,6 +5,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import ServiceCard from "@/components/ServiceCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import CaseStudyCard from "@/components/CaseStudyCard";
+import AnimatedHero from "@/components/AnimatedHero";
+import AnimatedSection from "@/components/AnimatedSection";
+import AnimatedCounter from "@/components/AnimatedCounter";
 import { ArrowRight, BarChart3, Users, Rocket, Calendar } from "lucide-react";
 import type { Service, Testimonial, CaseStudy } from "@shared/schema";
 
@@ -27,7 +30,7 @@ export default function Home() {
       <section className="gradient-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in">
+            <AnimatedHero>
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
                 Transform Your Business with{" "}
                 <span className="text-consultancy-accent">Strategic Consulting</span>
@@ -57,28 +60,34 @@ export default function Home() {
                 <p className="text-blue-200 text-sm mb-4">Trusted by industry leaders</p>
                 <div className="grid grid-cols-3 gap-8">
                   <div className="text-center">
-                    <div className="text-2xl font-bold">500+</div>
+                    <div className="text-2xl font-bold">
+                      <AnimatedCounter end={500} suffix="+" />
+                    </div>
                     <div className="text-sm text-blue-200">Projects Completed</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold">98%</div>
+                    <div className="text-2xl font-bold">
+                      <AnimatedCounter end={98} suffix="%" />
+                    </div>
                     <div className="text-sm text-blue-200">Client Satisfaction</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold">$50M+</div>
+                    <div className="text-2xl font-bold">
+                      <AnimatedCounter end={50} suffix="M+" />
+                    </div>
                     <div className="text-sm text-blue-200">Value Generated</div>
                   </div>
                 </div>
               </div>
-            </div>
+            </AnimatedHero>
             
-            <div className="hidden lg:block animate-slide-up">
+            <AnimatedSection direction="right" delay={0.5} className="hidden lg:block">
               <img
                 src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
                 alt="Business consulting team collaborating"
                 className="rounded-2xl shadow-2xl w-full h-auto"
               />
-            </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -86,7 +95,7 @@ export default function Home() {
       {/* Value Proposition */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <AnimatedSection direction="up" className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-bold text-consultancy-secondary mb-6">
               Why Leading Companies Choose Us
             </h2>
@@ -94,53 +103,59 @@ export default function Home() {
               Our proven methodology combines industry expertise with cutting-edge analytics 
               to deliver measurable results that drive sustainable growth.
             </p>
-          </div>
+          </AnimatedSection>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center group hover:transform hover:scale-105 transition-all duration-300">
-              <CardContent className="p-8">
-                <div className="bg-consultancy-light-gray rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:bg-consultancy-primary group-hover:text-white transition-all duration-300">
-                  <BarChart3 className="h-10 w-10 text-consultancy-primary group-hover:text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-consultancy-secondary mb-4">
-                  Data-Driven Insights
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  We leverage advanced analytics and market intelligence to provide actionable 
-                  insights that inform strategic decisions.
-                </p>
-              </CardContent>
-            </Card>
+            <AnimatedSection direction="up" delay={0.1}>
+              <Card className="text-center group hover:transform hover:scale-105 transition-all duration-300">
+                <CardContent className="p-8">
+                  <div className="bg-consultancy-light-gray rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:bg-consultancy-primary group-hover:text-white transition-all duration-300">
+                    <BarChart3 className="h-10 w-10 text-consultancy-primary group-hover:text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-consultancy-secondary mb-4">
+                    Data-Driven Insights
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    We leverage advanced analytics and market intelligence to provide actionable 
+                    insights that inform strategic decisions.
+                  </p>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
             
-            <Card className="text-center group hover:transform hover:scale-105 transition-all duration-300">
-              <CardContent className="p-8">
-                <div className="bg-consultancy-light-gray rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:bg-consultancy-primary group-hover:text-white transition-all duration-300">
-                  <Users className="h-10 w-10 text-consultancy-primary group-hover:text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-consultancy-secondary mb-4">
-                  Expert Team
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Our consultants bring decades of experience across industries, delivering 
-                  world-class expertise to every engagement.
-                </p>
-              </CardContent>
-            </Card>
+            <AnimatedSection direction="up" delay={0.2}>
+              <Card className="text-center group hover:transform hover:scale-105 transition-all duration-300">
+                <CardContent className="p-8">
+                  <div className="bg-consultancy-light-gray rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:bg-consultancy-primary group-hover:text-white transition-all duration-300">
+                    <Users className="h-10 w-10 text-consultancy-primary group-hover:text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-consultancy-secondary mb-4">
+                    Expert Team
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Our consultants bring decades of experience across industries, delivering 
+                    world-class expertise to every engagement.
+                  </p>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
             
-            <Card className="text-center group hover:transform hover:scale-105 transition-all duration-300">
-              <CardContent className="p-8">
-                <div className="bg-consultancy-light-gray rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:bg-consultancy-primary group-hover:text-white transition-all duration-300">
-                  <Rocket className="h-10 w-10 text-consultancy-primary group-hover:text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-consultancy-secondary mb-4">
-                  Proven Results
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Track record of delivering measurable ROI and sustainable growth for clients 
-                  across various industries and markets.
-                </p>
-              </CardContent>
-            </Card>
+            <AnimatedSection direction="up" delay={0.3}>
+              <Card className="text-center group hover:transform hover:scale-105 transition-all duration-300">
+                <CardContent className="p-8">
+                  <div className="bg-consultancy-light-gray rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:bg-consultancy-primary group-hover:text-white transition-all duration-300">
+                    <Rocket className="h-10 w-10 text-consultancy-primary group-hover:text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-consultancy-secondary mb-4">
+                    Proven Results
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Track record of delivering measurable ROI and sustainable growth for clients 
+                    across various industries and markets.
+                  </p>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -148,7 +163,7 @@ export default function Home() {
       {/* Services Preview */}
       <section className="py-20 bg-consultancy-light-gray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <AnimatedSection direction="up" className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-bold text-consultancy-secondary mb-6">
               Our Core Services
             </h2>
@@ -156,7 +171,7 @@ export default function Home() {
               Comprehensive consulting solutions designed to address your most critical 
               business challenges and opportunities.
             </p>
-          </div>
+          </AnimatedSection>
           
           {servicesLoading ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -171,27 +186,29 @@ export default function Home() {
               ))}
             </div>
           ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {services?.slice(0, 6).map((service) => (
-                <ServiceCard key={service.id} service={service} />
-              ))}
-            </div>
+            <AnimatedSection direction="up" delay={0.2}>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {services?.slice(0, 6).map((service) => (
+                  <ServiceCard key={service.id} service={service} />
+                ))}
+              </div>
+            </AnimatedSection>
           )}
           
-          <div className="text-center mt-12">
+          <AnimatedSection direction="up" delay={0.4} className="text-center mt-12">
             <Link href="/services">
               <Button className="bg-consultancy-primary hover:bg-consultancy-primary/90 text-white px-8 py-4 rounded-full text-lg font-semibold transform hover:scale-105 transition-all duration-200 shadow-lg">
                 View All Services
               </Button>
             </Link>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Case Studies Preview */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <AnimatedSection direction="up" className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-bold text-consultancy-secondary mb-6">
               Success Stories
             </h2>
@@ -199,7 +216,7 @@ export default function Home() {
               Discover how we've helped organizations achieve breakthrough results through 
               strategic consulting and innovative solutions.
             </p>
-          </div>
+          </AnimatedSection>
           
           {caseStudiesLoading ? (
             <div className="grid lg:grid-cols-2 gap-12">
@@ -216,13 +233,15 @@ export default function Home() {
             </div>
           ) : (
             <div className="grid lg:grid-cols-2 gap-12">
-              {caseStudies?.slice(0, 2).map((caseStudy) => (
-                <CaseStudyCard key={caseStudy.id} caseStudy={caseStudy} />
+              {caseStudies?.slice(0, 2).map((caseStudy, index) => (
+                <AnimatedSection key={caseStudy.id} direction="up" delay={0.1 * (index + 1)}>
+                  <CaseStudyCard caseStudy={caseStudy} />
+                </AnimatedSection>
               ))}
             </div>
           )}
           
-          <div className="text-center mt-12">
+          <AnimatedSection direction="up" delay={0.4} className="text-center mt-12">
             <Link href="/case-studies">
               <Button 
                 variant="outline"
@@ -231,14 +250,14 @@ export default function Home() {
                 View All Case Studies
               </Button>
             </Link>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Testimonials */}
       <section className="py-20 bg-consultancy-light-gray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <AnimatedSection direction="up" className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-bold text-consultancy-secondary mb-6">
               What Our Clients Say
             </h2>
@@ -246,7 +265,7 @@ export default function Home() {
               Don't just take our word for it. Hear from the leaders who've experienced 
               transformational results.
             </p>
-          </div>
+          </AnimatedSection>
           
           {testimonialsLoading ? (
             <div className="grid md:grid-cols-3 gap-8">
@@ -268,8 +287,10 @@ export default function Home() {
             </div>
           ) : (
             <div className="grid md:grid-cols-3 gap-8">
-              {testimonials?.map((testimonial) => (
-                <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+              {testimonials?.map((testimonial, index) => (
+                <AnimatedSection key={testimonial.id} direction="up" delay={0.1 * (index + 1)}>
+                  <TestimonialCard testimonial={testimonial} />
+                </AnimatedSection>
               ))}
             </div>
           )}
@@ -279,59 +300,61 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-20 gradient-primary text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-5xl font-bold mb-6">
-            Ready to Transform Your Business?
-          </h2>
-          <p className="text-xl lg:text-2xl mb-8 text-blue-100 leading-relaxed">
-            Let's discuss how our strategic consulting can help you achieve breakthrough 
-            results and sustainable growth.
-          </p>
-          
-          <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
-            <CardContent className="p-8">
-              <div className="grid md:grid-cols-3 gap-6 text-center">
-                <div>
-                  <div className="text-3xl font-bold mb-2">Free</div>
-                  <div className="text-blue-200">Initial Consultation</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold mb-2">24hr</div>
-                  <div className="text-blue-200">Response Time</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold mb-2">100%</div>
-                  <div className="text-blue-200">Confidential</div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
-              <Button className="bg-consultancy-accent hover:bg-consultancy-accent/90 text-consultancy-secondary px-8 py-4 rounded-full text-lg font-semibold transform hover:scale-105 transition-all duration-200 shadow-lg">
-                <Calendar className="mr-2 h-5 w-5" />
-                Schedule Free Consultation
-              </Button>
-            </Link>
-            <Button 
-              variant="outline" 
-              className="border-2 border-white text-white hover:bg-white hover:text-consultancy-primary px-8 py-4 rounded-full text-lg font-semibold transition-all duration-200"
-            >
-              Download Our Brochure
-            </Button>
-          </div>
-          
-          <div className="mt-8 text-blue-200">
-            <p>
-              Or call us directly:{" "}
-              <a 
-                href="tel:+1-555-0123" 
-                className="text-consultancy-accent hover:text-yellow-400 font-semibold"
-              >
-                +1 (555) 012-3456
-              </a>
+          <AnimatedSection direction="up">
+            <h2 className="text-3xl lg:text-5xl font-bold mb-6">
+              Ready to Transform Your Business?
+            </h2>
+            <p className="text-xl lg:text-2xl mb-8 text-blue-100 leading-relaxed">
+              Let's discuss how our strategic consulting can help you achieve breakthrough 
+              results and sustainable growth.
             </p>
-          </div>
+            
+            <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-8">
+              <CardContent className="p-8">
+                <div className="grid md:grid-cols-3 gap-6 text-center">
+                  <div>
+                    <div className="text-3xl font-bold mb-2">Free</div>
+                    <div className="text-blue-200">Initial Consultation</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold mb-2">24hr</div>
+                    <div className="text-blue-200">Response Time</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold mb-2">100%</div>
+                    <div className="text-blue-200">Confidential</div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact">
+                <Button className="bg-consultancy-accent hover:bg-consultancy-accent/90 text-consultancy-secondary px-8 py-4 rounded-full text-lg font-semibold transform hover:scale-105 transition-all duration-200 shadow-lg">
+                  <Calendar className="mr-2 h-5 w-5" />
+                  Schedule Free Consultation
+                </Button>
+              </Link>
+              <Button 
+                variant="outline" 
+                className="border-2 border-white text-white hover:bg-white hover:text-consultancy-primary px-8 py-4 rounded-full text-lg font-semibold transition-all duration-200"
+              >
+                Download Our Brochure
+              </Button>
+            </div>
+            
+            <div className="mt-8 text-blue-200">
+              <p>
+                Or call us directly:{" "}
+                <a 
+                  href="tel:+1-555-0123" 
+                  className="text-consultancy-accent hover:text-yellow-400 font-semibold"
+                >
+                  +1 (555) 012-3456
+                </a>
+              </p>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
     </div>

@@ -37,9 +37,9 @@ Preferred communication style: Simple, everyday language.
 - **Contact Submissions**: Client inquiry forms
 
 #### Page Structure
-- **Home**: Hero section, services overview, testimonials, case studies
-- **About**: Company story, team profiles, mission/values
-- **Services**: Detailed service offerings with feature lists
+- **Home**: Animated hero section, services overview, testimonials, case studies with scroll animations
+- **About**: Company story, team profiles, mission/values with animated entry effects
+- **Services**: Detailed service offerings with feature lists and hero animations
 - **Case Studies**: Project showcases with measurable outcomes
 - **Testimonials**: Client feedback and success stories
 - **How It Works**: Step-by-step consulting process
@@ -66,6 +66,7 @@ Preferred communication style: Simple, everyday language.
 ### UI/UX Dependencies
 - **Radix UI**: Accessible component primitives
 - **Tailwind CSS**: Utility-first styling
+- **Framer Motion**: Advanced animations and interactions
 - **Lucide React**: Icon library
 - **Class Variance Authority**: Component variant management
 
@@ -109,5 +110,6 @@ Preferred communication style: Simple, everyday language.
 5. **Query-Based Data**: TanStack Query for efficient server state management
 6. **Storage Abstraction**: Interface-based storage for flexibility in database implementations
 7. **Modern Tooling**: Vite, ESBuild, and TypeScript for optimal developer experience
+8. **Animation System**: Framer Motion integration with custom scroll-triggered animations, hero section effects, and interactive elements
 
 The application is designed to be easily deployable on platforms like Replit while maintaining scalability for production environments.
